@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактор задачи</title>
+</head>
+<body>
+<h1>Редактировать задачу</h1>
+<div th:each="task : ${taskOne}">
+    <form method="post">
+        <input type="text" name="textTask" th:value="${task.name}"   />
+        <input type="submit" value="Редактировать задачу" />
+    </form>
+</div>
+
+
+</body>
+</html>

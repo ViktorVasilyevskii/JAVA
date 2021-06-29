@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <title>Список задач</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="textTask" />
+        <input type="submit" value="Add Task" />
+    </form>
+
+
+<div th:each="task : ${tasks}">
+    <li th:text="*{task.name}" ></li>
+    <a th:href="'/edit/' + ${task.id}">Обновить</a>
+    <form th:action="'/remove/' + ${task.id}" method="post">
+        <button type="submit">Удалить</button>
+    </form>
+    <br><a>-----------</a><br>
+</div>
+
+</body>
+</html>
